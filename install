@@ -81,6 +81,6 @@ chruby 2.0.0-p0
   source ~/.zshrc
 
 echo "Installing the bundler gem for managing the gems of your projects ..."
-  gem install bundler --no-rdoc --no-ri
+  gem install bundler --no-document
 
 echo "WARNING: Remember to setup postgres, mysql and redis!"
