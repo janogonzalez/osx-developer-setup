@@ -64,26 +64,23 @@ echo "Installing Redis, a key/value database ..."
 # Ruby
 #
 
-echo "Installing rbenv, for managing rubies"
-  brew install rbenv
-  
+echo "Installing chruby, for managing rubies"
+  brew install chruby
+
 echo "Installing ruby-build, for building rubies"
   brew install --HEAD ruby-build
 
-echo "Installing Ruby 1.9.3 stable and making it the default Ruby ..."
-  rbenv install 1.9.3-p194
-  rbenv rehash
-  rbenv global 1.9.3-p194
-
+echo "Installing Ruby 2.0.0 and making it the default Ruby ..."
+  mkdir .rubies
+  ruby-build 2.0.0-p0 ~/.rubies/2.0.0-p0
   echo "
 # rvenv config
-export PATH=\"\$HOME/.rbenv/bin:\$PATH\"
-eval \"\$(rbenv init -)\"
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+chruby 2.0.0-p0
 " >> ~/.zshrc
   source ~/.zshrc
 
 echo "Installing the bundler gem for managing the gems of your projects ..."
   gem install bundler --no-rdoc --no-ri
-  rbenv rehash
 
 echo "WARNING: Remember to setup postgres, mysql and redis!"

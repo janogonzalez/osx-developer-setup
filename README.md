@@ -50,14 +50,14 @@ Another open source relational database.
 ### [Redis](http://redis.io/)
 An open source key-value store.
 
-### [rbenv](https://github.com/sstephenson/rbenv)
+### [chruby](https://github.com/postmodern/chruby)
 A tool for managing different Ruby versions.
 
 ### [ruby-build](https://github.com/sstephenson/ruby-build)
 A tool to compile different Ruby versions.
 
-### [Ruby 1.9.3](http://www.ruby-lang.org/)
-The latest stable Ruby version. 
+### [Ruby 2.0.0](http://www.ruby-lang.org/)
+The latest stable Ruby version.
 
 ### [Bundler](http://gembundler.com/)
 A gem to manage Ruby application dependencies.
