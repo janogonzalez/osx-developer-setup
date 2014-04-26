@@ -16,16 +16,7 @@ echo "Copying public key to clipboard. Paste it into your Github account ..."
 #
 
 echo "Installing Homebrew, a good OS X package manager ..."
-  ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
-  brew update
-
-echo "Put Homebrew location earlier in PATH ..."
-  echo "
-# Homebrew config
-export PATH=\"/usr/local/bin:\$PATH\"
-export MANPATH=\"/usr/local/share/man:\$MANPATH\"
-" >> ~/.zshrc
-  source ~/.zshrc
+  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 
 #
 # Utilities
@@ -34,7 +25,7 @@ export MANPATH=\"/usr/local/share/man:\$MANPATH\"
 echo "Installing ack, a good way to search through files ..."
   brew install ack
 
-echo "Installing Macvim, the best text editor ..."
+echo "Installing vim, the best text editor ..."
   brew install macvim --override-system-vim
 
 echo "Installing tmux, a good way to save project state and switch between projects ..."
@@ -54,7 +45,7 @@ echo "Installing GraphicsMagick, good for cropping and re-sizing images ..."
 echo "Installing Postgres, a good open source relational database ..."
   brew install postgres
 
-echo "Installing MySQL, another goof open source relational database ..."
+echo "Installing MySQL, another good open source relational database ..."
   brew install mysql
 
 echo "Installing Redis, a key/value database ..."
@@ -67,16 +58,15 @@ echo "Installing Redis, a key/value database ..."
 echo "Installing chruby, for managing rubies"
   brew install chruby
 
-echo "Installing ruby-build, for building rubies"
-  brew install --HEAD ruby-build
+echo "Installing ruby-install, for building rubies"
+  brew install ruby-install
 
 echo "Installing Ruby 2.0.0 and making it the default Ruby ..."
-  mkdir .rubies
-  ruby-build 2.0.0-p0 ~/.rubies/2.0.0-p0
+  ruby-install ruby 2.0
   echo "
-# rvenv config
+# chruby config
 source /usr/local/opt/chruby/share/chruby/chruby.sh
-chruby 2.0.0-p0
+chruby ruby-2.0
 " >> ~/.zshrc
   source ~/.zshrc
 
