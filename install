@@ -61,12 +61,12 @@ echo "Installing chruby, for managing rubies"
 echo "Installing ruby-install, for building rubies"
   brew install ruby-install
 
-echo "Installing Ruby 2.0.0 and making it the default Ruby ..."
-  ruby-install ruby 2.0
+echo "Installing lastest stable Ruby release and making it the default Ruby ..."
+  ruby-install ruby stable
   echo "
 # chruby config
 source /usr/local/opt/chruby/share/chruby/chruby.sh
-chruby ruby-2.0
+chruby ruby stable
 " >> ~/.zshrc
   source ~/.zshrc
 

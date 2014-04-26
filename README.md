@@ -57,7 +57,7 @@ A tool for managing different Ruby versions.
 ### [ruby-build](https://github.com/sstephenson/ruby-build)
 A tool to compile different Ruby versions.
 
-### [Ruby 2.0.0](http://www.ruby-lang.org/)
+### [Ruby](http://www.ruby-lang.org/)
 The latest stable Ruby version.
 
 ### [Bundler](http://gembundler.com/)
