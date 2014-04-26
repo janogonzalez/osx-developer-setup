@@ -3,7 +3,8 @@ Script to setup a Ruby development environment for your OS X machine.
 Tested on Mountain Lion. 
 
 ## Install
-* Install the [Command Line Tools for Xcode](Command Line Tools for Xcode).
+* Install the [Command Line Tools for Xcode](
+  https://developer.apple.com/xcode/downloads/).
 * Change your default shell to zsh:
 
   ```
