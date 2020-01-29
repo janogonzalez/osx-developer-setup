@@ -16,17 +16,17 @@ echo "Copying public key to clipboard. Paste it into your Github account ..."
 #
 
 echo "Installing Homebrew, a good OS X package manager ..."
-  ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 #
 # Utilities
 #
 
-echo "Installing ack, a good way to search through files ..."
-  brew install ack
+echo "Installing ag, a good way to search through files ..."
+  brew install the_silver_searcher
 
-echo "Installing vim, the best text editor ..."
-  brew install macvim --override-system-vim
+echo "Installing neovim, the best text editor ..."
+  brew install neovim
 
 echo "Installing tmux, a good way to save project state and switch between projects ..."
   brew install tmux
@@ -69,8 +69,5 @@ source /usr/local/opt/chruby/share/chruby/chruby.sh
 chruby ruby stable
 " >> ~/.zshrc
   source ~/.zshrc
-
-echo "Installing the bundler gem for managing the gems of your projects ..."
-  gem install bundler --no-document
 
 echo "WARNING: Remember to setup postgres, mysql and redis!"
