@@ -1,22 +1,11 @@
 #!/usr/bin/env bash
 
 #
-# SSH keys configuration
-#
-
-echo "Checking for SSH key, generating one if it doesn't exist ..."
-  [[ -f ~/.ssh/id_rsa.pub ]] || ssh-keygen -t rsa
-
-echo "Copying public key to clipboard. Paste it into your Github account ..."
-  [[ -f ~/.ssh/id_rsa.pub ]] && cat ~/.ssh/id_rsa.pub | pbcopy
-  open https://github.com/account/ssh
-
-#
 # Homebrew
 #
 
 echo "Installing Homebrew, a good OS X package manager ..."
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 #
 # Utilities
@@ -25,7 +14,7 @@ echo "Installing Homebrew, a good OS X package manager ..."
 echo "Installing ag, a good way to search through files ..."
   brew install the_silver_searcher
 
-echo "Installing neovim, the best text editor ..."
+echo "Installing neovim, a great text editor ..."
   brew install neovim
 
 echo "Installing tmux, a good way to save project state and switch between projects ..."
@@ -34,22 +23,6 @@ echo "Installing tmux, a good way to save project state and switch between proje
 
 echo "Installing ctags, useful for vim ..."
   brew install ctags
-
-echo "Installing GraphicsMagick, good for cropping and re-sizing images ..."
-  brew install graphicsmagick
-
-#
-# Databases
-#
-
-echo "Installing Postgres, a good open source relational database ..."
-  brew install postgres
-
-echo "Installing MySQL, another good open source relational database ..."
-  brew install mysql
-
-echo "Installing Redis, a key/value database ..."
-  brew install redis
 
 #
 # Ruby
@@ -62,12 +35,10 @@ echo "Installing ruby-install, for building rubies"
   brew install ruby-install
 
 echo "Installing lastest stable Ruby release and making it the default Ruby ..."
-  ruby-install ruby stable
+  ruby-install ruby
   echo "
 # chruby config
 source /usr/local/opt/chruby/share/chruby/chruby.sh
-chruby ruby stable
+chruby ruby
 " >> ~/.zshrc
   source ~/.zshrc
-
-echo "WARNING: Remember to setup postgres, mysql and redis!"
